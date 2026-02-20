@@ -9,11 +9,12 @@
 <body>
   
   <h1>Notes <img src="/icon.png" width="50" height="50"></h1>
+  
 <ul>
   <% notes.forEach((note) => { %>
     <li>
-      <strong><%= note.title %></strong>
-      <p><%= note.content %></p>
+      <strong>subject<%= note.title %></strong>
+      <p>data<%= note.content %></p>
       <table border="1">
         <tr><td>Tags: <%= note.tags %></td></tr>
         <tr><td>Category: <%= note.category %></td></tr>
@@ -37,6 +38,7 @@
     <br>
     <button type="submit">Add Note</button>
   </form>
+  <img src="/express.png" alt="Screenshot" style="max-width: 100%; height: auto;">
 </body>
 </html>
 

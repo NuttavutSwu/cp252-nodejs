@@ -1,6 +1,7 @@
 const tags = [];
-
+a = 1
 const getTags = (req, res) => {
+  tags.push(tags.length);
   res.json({ tags });
 };
 
