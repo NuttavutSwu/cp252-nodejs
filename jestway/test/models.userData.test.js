@@ -36,4 +36,10 @@ describe('remove user', () => {
       const difUser = userCountBefore - userCountAfter;
       expect(difUser).toEqual(2);
     })
+    test('Remove from empty users', () => {
+      testUserData = new UserData();
+      testUserData.clearUsers();
+      const result = testUserData.removeOneUser();
+      expect(result).toEqual(null);
+    })
 })
