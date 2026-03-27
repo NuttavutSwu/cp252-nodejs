@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const UserData = require('../models/userData');
 
-// Count method 
+// Count method
 describe('Count user', () => {
     test('default user count', () => {
       testUserData = new UserData();  
@@ -28,23 +28,12 @@ describe('remove user', () => {
       const difUser = userCountBefore - userCountAfter;
       expect(difUser).toEqual(1);
     })
+    test('Remove Two', () => {
+      testUserData = new UserData();
+      const userCountBefore = testUserData.getUserCount();
+      testUserData.removeTwoUser();
+      const userCountAfter = testUserData.getUserCount();
+      const difUser = userCountBefore - userCountAfter;
+      expect(difUser).toEqual(2);
+    })
 })
-
-test('Remove two', () => {
-  testUserData = new UserData();
-
-  const user = { name: 'test' }; // 👈 ต้องมีบรรทัดนี้
-
-  testUserData.addUser(user);
-  testUserData.addUser(user);
-  testUserData.addUser(user);
-
-  const userCountBefore = testUserData.getUserCount();
-
-  testUserData.removeUser();
-  testUserData.removeUser();
-
-  const userCountAfter = testUserData.getUserCount();
-
-  expect(userCountAfter).toBe(userCountBefore - 2);
-});
